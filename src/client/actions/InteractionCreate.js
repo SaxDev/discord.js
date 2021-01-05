@@ -6,7 +6,7 @@ const { Events } = require('../../util/Constants');
 class InteractionCreateAction extends Action {
   handle(data) {
     const client = this.client;
-    const interaction client.api.interactions(data.interaction.id, data.interaction.token)
+    const interaction = client.api.interactions(data.interaction.id, data.interaction.token)
     if (interaction) {
       /**
        * Emitted whenever a interaction is created.
