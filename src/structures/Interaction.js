@@ -2,6 +2,7 @@
 
 const Base = require('./Base');
 const SnowflakeUtil = require('../util/Snowflake');
+const { ApplicationCommandOptionTypes, InteractionResponseType } = require('../util/Constants.js');
 
 /**
  * Represents a interaction on Discord.
@@ -27,7 +28,13 @@ class Interaction extends Base {
      * @type {boolean}
      */
     this.used = false;
-
+    
+    /**
+    * The unique token generated to interact with the interaction
+    * @type {InteractionToken}
+    */
+    this.token = data.token;
+    
     if (data) this._patch(data);
   }
   
@@ -37,6 +44,14 @@ class Interaction extends Base {
     * @type {Snowflake}
     */
     this.id = data.id;
+    
+    if ('type' in data) {
+      /**
+       * The type of the interaction
+       * @type {?InteractionType}
+       */
+      this.type = ApplicationCommandOptionTypes[data.type];
+    }
     
     if ('member' in data) {
       /**
@@ -100,15 +115,21 @@ class Interaction extends Base {
     return this.channel.guild || null;
   }
   
-  /**
-   * When concatenated with a string, this automatically concatenates the interaction's content instead of the object.
-   * @returns {string}
-   * @example
-   * // Logs: Interaction: This is a interaction!
-   * console.log(`Interaction: ${interaction}`);
-   */
-  toString() {
-    return this.content;
+  async response(type, data) {  
+    const req = {
+      type: InteractionResponseType[type] || null,
+      data: {
+        content: data.content || '',
+        tts: data.tts ? data.tts : false,
+        embeds: data.embeds ? data.embeds : [],
+        allowed_mentions: data.allowed_mentions ? data.allowed_mentions : [],
+        flags: data.flags ? data.flags : false;
+      }
+    }
+
+    return this.client.api.interactions[this.id]
+      .callback.post({data: req})
+      .then(r => console.log(r));
   }
   
   toJSON() {
