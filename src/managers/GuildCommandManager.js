@@ -37,3 +37,5 @@ class GuildCommandManager extends BaseManager {
   
   }
 }
+
+module.exports = GuildCommandManager;
