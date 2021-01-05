@@ -1,6 +1,7 @@
 'use strict';
 
 const Base = require('./Base');
+const SnowflakeUtil = require('../util/Snowflake');
 
 /**
  * Represents a interaction on Discord.
