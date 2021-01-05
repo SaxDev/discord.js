@@ -37,12 +37,6 @@ class Interaction extends Base {
     */
     this.id = data.id;
     
-    /**
-    * The Guild of interaction
-    * @type {Guild}
-    */
-    this.guild = this.channel.guild;
-    
     if ('member' in data) {
       /**
       * The author of interaction
