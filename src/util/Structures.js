@@ -108,7 +108,7 @@ const structures = {
   VoiceState: require('../structures/VoiceState'),
   Role: require('../structures/Role'),
   User: require('../structures/User'),
-  Interactions: require('../structures/Interactions'),
+  Interaction: require('../structures/Interaction'),
 };
 
 module.exports = Structures;
