@@ -109,6 +109,7 @@ const structures = {
   Role: require('../structures/Role'),
   User: require('../structures/User'),
   Interaction: require('../structures/Interaction'),
+  Command: require('../structures/Command')
 };
 
 module.exports = Structures;
