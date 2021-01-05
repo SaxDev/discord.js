@@ -72,7 +72,13 @@ class Guild extends Base {
      * @type {VoiceStateManager}
      */
     this.voiceStates = new VoiceStateManager(this);
-
+    
+    /**
+    * A manager of the slash commands of this guild
+    * @type {SlashCommandManager}
+    */
+    this.commands = new SlashCommandManager(this);
+    
     /**
      * Whether the bot has been removed from the guild
      * @type {boolean}
