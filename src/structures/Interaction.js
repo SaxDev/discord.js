@@ -123,7 +123,7 @@ class Interaction extends Base {
         tts: data.tts ? data.tts : false,
         embeds: data.embeds ? data.embeds : [],
         allowed_mentions: data.allowed_mentions ? data.allowed_mentions : [],
-        flags: data.flags ? data.flags : false;
+        flags: data.flags ? data.flags : false
       }
     }
 
