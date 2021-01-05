@@ -13,9 +13,9 @@ class InteractionCreateAction extends Action {
        * @event Client#interactionCreate
        * @param {Interaction} The interaction that was created
        */
-      client.emit(Events.INTERACTION_CREATE, interaction);
+      client.emit(Events.INTERACTION_CREATE, data);
     }
-    return { interaction };
+    return { data };
   }
 }
 
