@@ -13,14 +13,14 @@ class InteractionCreateAction extends Action {
       const interaction = channel.interactions.add(data);
       const user = interaction.author;
       let member = interaction.member;
+      
+      /**
+      * Emitted whenever a interaction is created.
+      * @event Client#interactionCreate
+      * @param {Interaction} The interaction that was created      
+      */
+      this.client.emit(Events.INTERACTION_CREATE, interaction);
     }
-    
-    /**
-     * Emitted whenever a interaction is created.
-     * @event Client#interactionCreate
-     * @param {Interaction} The interaction that was created      
-     */
-    this.client.emit(Events.INTERACTION_CREATE, interaction);
     return { interaction };
   }
 }
