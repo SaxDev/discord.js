@@ -43,8 +43,8 @@ class Interaction extends Base {
       * The author of interaction
       * @type {?User}
       */
-      this.author = this.client.users.add(data.member, !data.webhook_id)
-    } else if (!this.author) {
+      this.author = this.client.users.add(data.member.user, !data.webhook_id)
+    } else if (!this.member) {
       this.author = null;
     }
     
