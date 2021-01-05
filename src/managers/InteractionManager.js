@@ -10,8 +10,8 @@ const Collection = require('../util/Collection');
  * @extends {BaseManager}
  */
 class InteractionManager extends BaseManager {
-  constructor(channel, iterable) {
-    super(channel.client, iterable, Interaction, Collection);
+  constructor(channel) {
+    super(channel.client, Interaction, Collection);
     /**
      * The channel that the interaction belong to
      * @type {TextBasedChannel}
