@@ -4,7 +4,7 @@ const Base = require('./Base');
 const { Error } = require('../errors');
 const Snowflake = require('../util/Snowflake');
 
-class User extends Base {
+class Command extends Base {
   /**
    * @param {Client} client The instantiating client
    * @param {Object} data The data for the user
