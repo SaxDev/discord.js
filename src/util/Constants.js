@@ -219,6 +219,25 @@ exports.VoiceOPCodes = {
   CLIENT_DISCONNECT: 13,
 };
 
+exports.ApplicationCommandOptionTypes = {
+  SUB_COMMAND: 1,
+  SUB_COMMAND_GROUP: 2,
+  STRING: 3,
+  INTEGER: 4,
+  BOOLEAN: 5,
+  USER: 6,
+  CHANNEL: 7,
+  ROLE: 8
+};
+
+exports.InteractionResponseType = {
+  'Pong': 1,
+  'Acknowledge': 2,
+  'ChannelMessage': 3,
+  'ChannelMessageWithSource': 4,
+  'AcknowledgeWithSource': 5
+};
+  
 exports.Events = {
   RATE_LIMIT: 'rateLimit',
   CLIENT_READY: 'ready',
@@ -274,7 +293,8 @@ exports.Events = {
   SHARD_READY: 'shardReady',
   SHARD_RESUME: 'shardResume',
   INVALIDATED: 'invalidated',
-  RAW: 'raw'
+  RAW: 'raw',
+  INTERACTION_CREATE: 'interaction'
 };
 
 exports.ShardEvents = {
