@@ -5,16 +5,13 @@ const { Events } = require('../../util/Constants');
 
 class InteractionCreateAction extends Action {
   handle(data) {
-    const client = this.client;
-    const interaction = client.api.interactions(data.id, data.token)
-    if (interaction) {
-      /**
-       * Emitted whenever a interaction is created.
-       * @event Client#interactionCreate
-       * @param {Interaction} The interaction that was created
-       */
-      client.emit(Events.INTERACTION_CREATE, data);
-    }
+    const channel = this.client.channels.get(data.channel_id);
+    /**
+     * Emitted whenever a interaction is created.
+     * @event Client#interactionCreate
+     * @param {Interaction} The interaction that was created      
+     */
+    this.client.emit(Events.INTERACTION_CREATE, data, channel);
     return { data };
   }
 }
