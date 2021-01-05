@@ -4,6 +4,7 @@ const GuildChannel = require('./GuildChannel');
 const Webhook = require('./Webhook');
 const TextBasedChannel = require('./interfaces/TextBasedChannel');
 const MessageManager = require('../managers/MessageManager');
+const InteractionManager = require('../managers/InteractionManager');
 const Collection = require('../util/Collection');
 const DataResolver = require('../util/DataResolver');
 
