@@ -117,7 +117,7 @@ class Interaction extends Base {
   
   async response(type, data) {  
     const req = {
-      type: InteractionResponseType[type] || null,
+      type: InteractionResponseType[type],
       data: {
         content: data.content || '',
         tts: data.tts ? data.tts : false,
