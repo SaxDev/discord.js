@@ -16,6 +16,7 @@ const GuildMemberManager = require('../managers/GuildMemberManager');
 const PresenceManager = require('../managers/PresenceManager');
 const RoleManager = require('../managers/RoleManager');
 const VoiceStateManager = require('../managers/VoiceStateManager');
+const GuildCommandManager = require('../managers/GuildCommandManager');
 const Collection = require('../util/Collection');
 const {
   ChannelTypes,
@@ -77,7 +78,7 @@ class Guild extends Base {
     * A manager of the slash commands of this guild
     * @type {SlashCommandManager}
     */
-    this.commands = new SlashCommandManager(this);
+    this.commands = new GuildCommandManager(this);
     
     /**
      * Whether the bot has been removed from the guild
