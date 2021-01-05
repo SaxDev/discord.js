@@ -125,3 +125,5 @@ class Interaction extends Base {
     });
   }
 }
+
+module.exports = Interaction;
