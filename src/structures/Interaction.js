@@ -126,8 +126,10 @@ class Interaction extends Base {
         flags: data.flags ? data.flags : false
       }
     }
+    
+    this.used = true;
 
-    return this.client.api.interactions[this.id]
+    return this.client.api.interactions(this.id, this.token)
       .callback.post({data: req})
       .then(r => console.log(r));
   }
