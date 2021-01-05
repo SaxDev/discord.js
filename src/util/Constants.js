@@ -274,7 +274,7 @@ exports.Events = {
   SHARD_READY: 'shardReady',
   SHARD_RESUME: 'shardResume',
   INVALIDATED: 'invalidated',
-  RAW: 'raw',
+  RAW: 'raw'
 };
 
 exports.ShardEvents = {
@@ -337,6 +337,7 @@ exports.PartialTypes = keyMirror(['USER', 'CHANNEL', 'GUILD_MEMBER', 'MESSAGE', 
  * * VOICE_STATE_UPDATE
  * * VOICE_SERVER_UPDATE
  * * WEBHOOKS_UPDATE
+ * * INTERACTION_CREATE
  * @typedef {string} WSEventType
  */
 exports.WSEvents = keyMirror([
@@ -376,6 +377,7 @@ exports.WSEvents = keyMirror([
   'VOICE_STATE_UPDATE',
   'VOICE_SERVER_UPDATE',
   'WEBHOOKS_UPDATE',
+  'INTERACTION_CREATE'
 ]);
 
 /**
