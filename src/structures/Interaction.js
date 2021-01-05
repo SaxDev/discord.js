@@ -115,22 +115,14 @@ class Interaction extends Base {
     return this.channel.guild || null;
   }
   
-  async response(type, data) {  
-    const req = {
-      type: InteractionResponseType[type],
-      data: {
-        content: data.content || '',
-        tts: data.tts ? data.tts : false,
-        embeds: data.embeds ? data.embeds : [],
-        allowed_mentions: data.allowed_mentions ? data.allowed_mentions : [],
-        flags: data.flags ? data.flags : false
-      }
-    }
-    
+  async response(type, data) {
     this.used = true;
 
     return this.client.api.interactions(this.id, this.token)
-      .callback.post({data: req})
+      .callback.post({data: {
+        type: type,
+        data: data
+      }})
       .then(r => console.log(r));
   }
   
